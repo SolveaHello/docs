@@ -128,7 +128,7 @@
             "group": "Account",
             "pages": [
               "account/plans-and-pricing",
-              "untitled-page"
+              "account/usage-and-credits"
             ]
           }
         ]
