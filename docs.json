@@ -126,7 +126,9 @@
           },
           {
             "group": "Outbound",
-            "pages": []
+            "pages": [
+              "outbound-overview"
+            ]
           },
           {
             "group": "Account",
@@ -140,7 +142,7 @@
       {
         "tab": "Changelog",
         "pages": [
-          "changelog/changelog"
+          "changelog"
         ]
       },
       {
