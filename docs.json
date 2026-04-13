@@ -128,7 +128,8 @@
             "group": "Outbound",
             "pages": [
               "outbound/outbound-overview",
-              "outbound/create-an-outbound-campaign"
+              "outbound/create-an-outbound-campaign",
+              "outbound/outbound-records"
             ]
           },
           {
