@@ -148,7 +148,10 @@
         ]
       },
       {
-        "tab": "Academy"
+        "tab": "Academy",
+        "pages": [
+          "for-beginners"
+        ]
       }
     ]
   },
