@@ -1,8 +1,8 @@
 /**
  * 邮件活动访问追踪：
- * - 独立加载 Mixpanel SDK（Mintlify 内置的 Mixpanel 没挂到 window.mixpanel）
- * - 检测 URL 上的 utm_medium=email/edm，触发自定义事件 email_campaign_visit
- * - 触发后清理 URL 上的 UTM 相关参数
+ * - 优先识别 ?ec=<base64-json> 单参数（绕过中转把 & 拆散的问题）
+ * - 也兼容散落的 utm_* 参数
+ * - 触发后清理 URL
  */
 (function () {
   try {
@@ -15,19 +15,38 @@
       'utm_content',
       'campaign_label',
     ];
+    var EMAIL_CLEAN_KEYS = EMAIL_TRACK_KEYS.concat(['ec']);
+
+    function decodeCompact(ec) {
+      if (!ec) return null;
+      try {
+        var padded = ec + '==='.slice(0, (4 - (ec.length % 4)) % 4);
+        var standard = padded.replace(/-/g, '+').replace(/_/g, '/');
+        var obj = JSON.parse(atob(standard));
+        return obj && typeof obj === 'object' ? obj : null;
+      } catch (_) {
+        return null;
+      }
+    }
 
     var params = new URLSearchParams(window.location.search);
-    var utmMedium = params.get('utm_medium');
+    var compact = decodeCompact(params.get('ec'));
+
+    function getParam(key) {
+      return (compact && compact[key]) || params.get(key) || null;
+    }
+
+    var utmMedium = getParam('utm_medium');
     if (utmMedium !== 'email' && utmMedium !== 'edm') return;
 
     var payload = {};
     EMAIL_TRACK_KEYS.forEach(function (key) {
-      var v = params.get(key);
+      var v = getParam(key);
       if (v) payload[key] = v;
     });
     console.log('[email-campaign-tracker] detected, payload:', payload);
 
-    // 标准 Mixpanel 加载片段（必须用 window.mixpanel 名字，SDK 内部按此查队列）
+    // 标准 Mixpanel SDK 加载片段
     (function (e, c) {
       if (!c.__SV) {
         var l, h;
@@ -71,9 +90,9 @@
     window.mixpanel.track('email_campaign_visit', payload);
     console.log('[email-campaign-tracker] event queued');
 
-    // 1 秒后清理 URL，给 Mintlify 的 pageview 留出读取 UTM 的时间
+    // 1 秒后清理 URL，给 Mintlify 的 pageview 留出读取参数的时间
     setTimeout(function () {
-      EMAIL_TRACK_KEYS.forEach(function (key) {
+      EMAIL_CLEAN_KEYS.forEach(function (key) {
         params.delete(key);
       });
       var newSearch = params.toString();
