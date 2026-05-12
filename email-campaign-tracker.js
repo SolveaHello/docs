@@ -1,6 +1,6 @@
 /**
  * 邮件活动访问追踪：
- * - 自带 Mixpanel SDK 加载（Mintlify 的内置 Mixpanel 没挂到 window.mixpanel）
+ * - 独立加载 Mixpanel SDK（Mintlify 内置的 Mixpanel 没挂到 window.mixpanel）
  * - 检测 URL 上的 utm_medium=email/edm，触发自定义事件 email_campaign_visit
  * - 触发后清理 URL 上的 UTM 相关参数
  */
@@ -27,11 +27,11 @@
     });
     console.log('[email-campaign-tracker] detected, payload:', payload);
 
-    // 自带 Mixpanel SDK（独立命名空间 __solveaMp，避免与 Mintlify 内置冲突）
+    // 标准 Mixpanel 加载片段（必须用 window.mixpanel 名字，SDK 内部按此查队列）
     (function (e, c) {
       if (!c.__SV) {
         var l, h;
-        window.__solveaMp = c;
+        window.mixpanel = c;
         c._i = [];
         c.init = function (q, r, f) {
           function t(d, a) {
@@ -42,11 +42,11 @@
             };
           }
           var b = c;
-          'undefined' !== typeof f ? (b = c[f] = []) : (f = '__solveaMp');
+          'undefined' !== typeof f ? (b = c[f] = []) : (f = 'mixpanel');
           b.people = b.people || [];
           b.toString = function (d) {
             var a = 'mixpanel';
-            '__solveaMp' !== f && (a += '.' + f);
+            'mixpanel' !== f && (a += '.' + f);
             d || (a += ' (stub)');
             return a;
           };
@@ -65,13 +65,10 @@
         var s = e.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(k, s);
       }
-    })(document, window.__solveaMp || []);
+    })(document, window.mixpanel || []);
 
-    // 用独立实例初始化，名字 solvea，不污染 Mintlify 自带的 mixpanel
-    window.__solveaMp.init('a5d2467fc60284b84678487fb69210ab', { autocapture: false }, 'solvea');
-
-    // 调用 track（stub 会先 queue，SDK 加载完后自动发出）
-    window.__solveaMp.solvea.track('email_campaign_visit', payload);
+    window.mixpanel.init('a5d2467fc60284b84678487fb69210ab', { autocapture: false });
+    window.mixpanel.track('email_campaign_visit', payload);
     console.log('[email-campaign-tracker] event queued');
 
     // 1 秒后清理 URL，给 Mintlify 的 pageview 留出读取 UTM 的时间
