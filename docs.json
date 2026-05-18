@@ -136,7 +136,8 @@
             "group": "Account",
             "pages": [
               "account/plans-and-pricing",
-              "account/usage-and-credits"
+              "account/usage-and-credits",
+              "account/api-keys"
             ]
           }
         ]
