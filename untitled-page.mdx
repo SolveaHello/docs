@@ -1,0 +1,137 @@
+---
+title: "Playbooks and Templates"
+---
+
+## First-Day Launch Checklist
+
+Use this checklist before you ask customers to call or text your Solvea number.
+
+### Workspace Readiness
+
+- The correct workspace name is shown in the app.
+- The workspace owns at least one business number.
+- The business number is assigned to the right AI receptionist.
+- The current plan, trial, or subscription is active.
+- Credits are available for calls, SMS, AI, and translation usage.
+
+### AI Readiness
+
+- The AI greeting is short and clear.
+- The AI identity says the real business name.
+- The AI prompt tells the AI what it can and cannot promise.
+- The selected voice is easy to understand.
+- You have tested at least three realistic customer questions.
+
+### iPhone Readiness
+
+- Notifications are allowed.
+- Calling permissions are allowed.
+- The app is logged into the correct workspace.
+- The teammate who will answer calls knows how to go online and offline.
+- A test inbound call reaches the right device or AI flow.
+
+### Customer Follow-Up Readiness
+
+- A test call appears in Inbox.
+- A test SMS appears in Inbox.
+- The recording, transcript, or AI summary is visible after processing.
+- A contact can be created or updated from the customer thread.
+- A teammate knows what to do after a missed call.
+
+## Recommended Operating Playbooks
+
+These playbooks turn the app into a repeatable daily habit.
+
+### Playbook 1: Missed Call Follow-Up
+
+Use this when a customer called but no teammate answered live.
+
+1. Open **Inbox**.
+2. Open the missed call thread.
+3. Read the AI summary or transcript.
+4. Decide whether the customer needs SMS or a callback.
+5. If simple, send a short SMS.
+6. If urgent or unclear, call back.
+7. Save the customer name if it is missing.
+
+Suggested SMS:
+
+> ```text
+> Hi, this is [Business Name]. Thanks for calling us. I saw your message and will help from here. What is the best time to reach you?
+> ```
+
+### Playbook 2: After-Hours AI Coverage
+
+Use this when your team is offline but customers may still call.
+
+1. Set the AI Receptionist rule so AI can answer when teammates are unavailable.
+2. Use a greeting that explains the situation.
+3. Ask the AI to collect name, reason for calling, and best callback time.
+4. Review Inbox the next morning.
+5. Call back high-priority customers first.
+
+Suggested AI instruction:
+
+> ```text
+> If no human teammate is available, politely collect the caller's name, phone number, reason for calling, urgency, and preferred callback time. Do not promise an exact appointment unless the caller already has one.
+> ```
+
+### Playbook 3: Appointment or Service Reminder
+
+Use this with SMS or AI Calls when customers need a simple reminder.
+
+1. Confirm the customer list.
+2. Use one clear goal.
+3. Keep the message short.
+4. Ask for a yes/no or one specific reply.
+5. Review failed sends or unanswered calls.
+
+Suggested SMS:
+
+> ```text
+> Hi [Name], this is [Business Name]. This is a reminder for your appointment on [Date] at [Time]. Reply YES to confirm or call us if you need to change it.
+> ```
+
+### Playbook 4: Warm Lead Callback
+
+Use this when someone requested information and you need to respond quickly.
+
+1. Open the contact or Inbox thread.
+2. Read the previous message or AI summary.
+3. Call from the business number.
+4. If the customer does not answer, send SMS immediately.
+5. Add the contact name and notes for future follow-up.
+
+Suggested SMS:
+
+> ```text
+> Hi [Name], this is [Agent Name] from [Business Name]. I just tried calling about your request. Reply here or call this number when you have a moment.
+> ```
+
+## Article A13: AI Prompt Templates for the App
+
+Use these as starting points. Replace bracketed text before publishing.
+
+### Basic AI Receptionist Prompt
+
+> ```text
+> You are the AI receptionist for [Business Name]. Greet callers warmly, ask how you can help, and collect the caller's name, phone number, and reason for calling. Keep responses short and natural. If the caller needs a human, tell them the team will follow up. Do not make pricing, legal, medical, or scheduling promises unless the caller provides confirmed details.
+> ```
+
+### Service Business Prompt
+
+> ```text
+> You answer calls for [Business Name], a [type of service] company. Help callers explain the service they need, their location, preferred time, and urgency. If they ask for availability or exact price, collect details and say the team will confirm. End by summarizing the request and asking for the best callback time.
+> ```
+
+### Lead Qualification Prompt
+
+> ```text
+> You are calling or answering for [Business Name]. Your goal is to understand whether the customer is interested in [offer]. Ask no more than three qualification questions. If they are interested, collect the best callback time. If they are not interested, thank them politely and end the call.
+> ```
+
+### Translation-Friendly Prompt
+
+> ```text
+> Use simple sentences. Avoid slang. Ask one question at a time. Confirm important details such as name, phone number, date, time, address, and service request. If the translation seems unclear, politely repeat the question in simpler words.
+> ```

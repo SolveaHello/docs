@@ -8,151 +8,201 @@
     "dark": "#2a2a2a"
   },
   "navigation": {
-    "tabs": [
+    "products": [
       {
-        "tab": "Documentation",
-        "pages": [
-          "index",
+        "product": "Agent Builder",
+        "tabs": [
           {
-            "group": "Get started",
+            "tab": "Documentation",
             "pages": [
-              "introduction",
-              "quick-start"
-            ]
-          },
-          {
-            "group": "Build",
-            "pages": [
-              "agent/overview",
+              "index",
               {
-                "group": "Build Agents",
+                "group": "Get started",
                 "pages": [
-                  "agent/build-agent-with-ai",
-                  "agent/build-agent-with-template",
-                  "agent/my-agents"
+                  "introduction",
+                  "quick-start"
                 ]
               },
-              "agent/configure-your-agent",
-              "agent/testing-and-training",
-              "agent/advanced-write-an-agent"
-            ]
-          },
-          {
-            "group": "Learn",
-            "pages": [
-              "knowledge/overview",
-              "knowledge/manage",
               {
-                "group": "Add Knowledge",
+                "group": "Build",
                 "pages": [
-                  "knowledge/add-sources",
-                  "knowledge/sync-from-platforms"
+                  "agent/overview",
+                  {
+                    "group": "Build Agents",
+                    "pages": [
+                      "agent/build-agent-with-ai",
+                      "agent/build-agent-with-template",
+                      "agent/my-agents"
+                    ]
+                  },
+                  "agent/configure-your-agent",
+                  "agent/testing-and-training",
+                  "agent/advanced-write-an-agent"
                 ]
-              }
-            ]
-          },
-          {
-            "group": "Deploy",
-            "pages": [
-              "deploy/overview",
+              },
               {
-                "group": "Channels",
+                "group": "Learn",
                 "pages": [
+                  "knowledge/overview",
+                  "knowledge/manage",
                   {
-                    "group": "Livechat",
+                    "group": "Add Knowledge",
                     "pages": [
-                      {
-                        "group": "Configuration",
-                        "pages": [
-                          "deploy/livechat/configuration/appearance-and-personalization",
-                          "deploy/livechat/configuration/trigger-configuration"
-                        ]
-                      },
-                      "deploy/livechat/install-livechat"
-                    ]
-                  },
-                  {
-                    "group": "Phone&SMS",
-                    "pages": [
-                      "deploy/phone/add-phone-numbers",
-                      "deploy/phone/manage-phone-numbers"
-                    ]
-                  },
-                  {
-                    "group": "Email",
-                    "pages": [
-                      "deploy/email",
-                      "deploy/email/gmail-authorization"
+                      "knowledge/add-sources",
+                      "knowledge/sync-from-platforms"
                     ]
                   }
                 ]
               },
               {
-                "group": "Tools",
+                "group": "Deploy",
                 "pages": [
-                  "deploy/tools/google-tool",
-                  "deploy/tools/logistics-tracking"
+                  "deploy/overview",
+                  {
+                    "group": "Channels",
+                    "pages": [
+                      {
+                        "group": "Livechat",
+                        "pages": [
+                          {
+                            "group": "Configuration",
+                            "pages": [
+                              "deploy/livechat/configuration/appearance-and-personalization",
+                              "deploy/livechat/configuration/trigger-configuration"
+                            ]
+                          },
+                          "deploy/livechat/install-livechat"
+                        ]
+                      },
+                      {
+                        "group": "Phone&SMS",
+                        "pages": [
+                          "deploy/phone/add-phone-numbers",
+                          "deploy/phone/manage-phone-numbers"
+                        ]
+                      },
+                      {
+                        "group": "Email",
+                        "pages": [
+                          "deploy/email",
+                          "deploy/email/gmail-authorization"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "Tools",
+                    "pages": [
+                      "deploy/tools/google-tool",
+                      "deploy/tools/logistics-tracking"
+                    ]
+                  },
+                  {
+                    "group": "E-commerce Platform",
+                    "pages": [
+                      "deploy/e-commerce-platform/shopify"
+                    ]
+                  }
                 ]
               },
               {
-                "group": "E-commerce Platform",
+                "group": "Inbox",
                 "pages": [
-                  "deploy/e-commerce-platform/shopify"
+                  "inbox/inbox-overview",
+                  "inbox/read-tickets",
+                  "inbox/handle-tickets"
+                ]
+              },
+              {
+                "group": "Contacts",
+                "pages": [
+                  "contacts/contact-overview"
+                ]
+              },
+              {
+                "group": "Analytics",
+                "pages": [
+                  "analytics/analytics-overview",
+                  "analytics/statistics",
+                  "analytics/topic-insights"
+                ]
+              },
+              {
+                "group": "Outbound",
+                "pages": [
+                  "outbound/outbound-overview",
+                  "outbound/create-an-outbound-campaign",
+                  "outbound/outbound-records"
+                ]
+              },
+              {
+                "group": "Account",
+                "pages": [
+                  "account/plans-and-pricing",
+                  "account/usage-and-credits",
+                  "account/api-keys"
                 ]
               }
             ]
           },
           {
-            "group": "Inbox",
+            "tab": "Changelog",
             "pages": [
-              "inbox/inbox-overview",
-              "inbox/read-tickets",
-              "inbox/handle-tickets"
+              "changelog"
             ]
           },
           {
-            "group": "Contacts",
+            "tab": "Academy",
             "pages": [
-              "contacts/contact-overview"
-            ]
-          },
-          {
-            "group": "Analytics",
-            "pages": [
-              "analytics/analytics-overview",
-              "analytics/statistics",
-              "analytics/topic-insights"
-            ]
-          },
-          {
-            "group": "Outbound",
-            "pages": [
-              "outbound/outbound-overview",
-              "outbound/create-an-outbound-campaign",
-              "outbound/outbound-records"
-            ]
-          },
-          {
-            "group": "Account",
-            "pages": [
-              "account/plans-and-pricing",
-              "account/usage-and-credits",
-              "account/api-keys"
+              "for-beginners",
+              "for-features"
             ]
           }
         ]
       },
       {
-        "tab": "Changelog",
-        "pages": [
-          "changelog"
+        "product": "Solvea APP",
+        "tabs": [
+          {
+            "tab": "Documentation",
+            "pages": [
+              "why",
+              "active-the-app",
+              "daily-operating-logic",
+              "inbox-and-follow-up",
+              "ai-receptionist",
+              "calls-sms-ai-calls-and",
+              "contacts-and-team",
+              "subscription-usage-mcp-and-troubleshooting",
+              "untitled-page",
+              "faqs"
+            ]
+          },
+          {
+            "tab": "Changelog"
+          }
         ]
       },
       {
-        "tab": "Academy",
-        "pages": [
-          "for-beginners",
-          "for-features"
+        "product": "Solvea PC",
+        "tabs": [
+          {
+            "tab": "Documantation",
+            "pages": [
+              "why-solvea-pc-web",
+              "activate-pc-web",
+              "desk-operating-logic",
+              "email-live-chat-sms-and-voice",
+              "channel-setup",
+              "ai-agent-and-ai-outbound",
+              "contacts-team-billing-mcp-and-mobile-apps",
+              "troubleshooting",
+              "faqs-1"
+            ]
+          },
+          {
+            "tab": "Changelog"
+          }
         ]
       }
     ]
