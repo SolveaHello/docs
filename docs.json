@@ -179,7 +179,8 @@
             ]
           },
           {
-            "tab": "Changelog"
+            "tab": "Changelog",
+            "hidden": true
           }
         ]
       },
@@ -201,7 +202,8 @@
             ]
           },
           {
-            "tab": "Changelog"
+            "tab": "Changelog",
+            "hidden": true
           }
         ]
       }
